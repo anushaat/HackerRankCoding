@@ -1,0 +1,52 @@
+package Trees;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class VerticalOrder {
+	
+	public static TreeMap<Integer, ArrayList<Node>> tm = new TreeMap<>();
+	public static ArrayList<Integer> al;
+	public static int hd;
+	
+	
+	public Node getVerticalOrder(Node node, int hd, TreeMap<Integer, ArrayList<Node>> map){
+		if(node == null){
+			return null;
+		}
+		
+		map.put(hd, node);
+		
+		getVerticalOrder(node.left, hd-1, map);
+		
+		getVerticalOrder(node.right, hd+1, map);
+		
+		return node;
+	}
+	
+	public void printVerticalOrder(Node node){
+		
+		int hd=0;
+		getVerticalOrder(node, hd, tm);
+		
+		for(Map.Entry<Integer, ArrayList<Node>> entry : tm.entrySet()){
+			int key = entry.getKey();
+			ArrayList<Node> value = entry.getValue();
+			for(Node root : value){
+				System.out.print(root.data+ " ");
+			}
+			System.out.println();
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+
+	}
+
+}

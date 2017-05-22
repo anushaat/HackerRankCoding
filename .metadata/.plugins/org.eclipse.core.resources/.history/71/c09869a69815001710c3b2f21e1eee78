@@ -1,0 +1,23 @@
+
+public class Student{
+	static int count = 0;
+	pubic void print(){
+		System.out.println(count);
+		count++;
+	}
+}
+
+
+public class BinarySerachTreeDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student s1 = new Student();
+		Student s2 = new Student();
+		Student s3 = new Student();
+		s1.print();
+		s2.print();
+		s3.print();
+	}
+
+}

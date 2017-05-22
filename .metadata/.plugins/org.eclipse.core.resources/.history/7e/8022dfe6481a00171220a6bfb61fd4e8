@@ -1,0 +1,17 @@
+package linkedlist;
+
+import org.junit.Test;
+
+public class LinkedListTest {
+	
+	@Test
+	public void test(){
+		MyLinkedList list = new MyLinkedList();
+		list.add(new Node(15));
+		list.add(new Node(17));
+		list.add(new Node(10));
+		
+		System.out.println("Done!");
+	}
+
+}

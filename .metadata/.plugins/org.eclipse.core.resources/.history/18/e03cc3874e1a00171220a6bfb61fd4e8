@@ -1,0 +1,57 @@
+package linkedlist;
+
+public class MyLinkedList {
+	
+	//head							tail
+	//
+	
+	Node head;
+	Node tail;
+	
+	public void add(int data){
+		
+		Node node = new Node(data);
+		if(tail == null){
+			tail = node;
+			head = node;
+		}
+		else{
+			tail.next = node;
+			tail = node;
+		}
+	}
+	
+	public Node delete(int data){
+		//scenario 1: empty linked list
+		//scenario 2: non-empty linked list
+		Node node = find(data);
+		if(node != null){
+			node
+		}
+		return null;
+	}
+	
+	public Node find(int data){
+		if(head == null){
+			return null;
+		}
+		
+		//check the first else for a match
+		if(head.data == data){
+			return head;
+		}
+		
+		//assign node as the iterator
+		Node node = head;
+		
+		//iterate through our LinkedList
+		while(node.next != null){
+			node = node.next;
+			if(node.data == data){
+				return node;
+			}
+		}
+		return null;
+	}
+
+}

@@ -1,0 +1,16 @@
+
+import java.util.LinkedList;
+import java.util.Collection;
+
+public class AddLinkedList {
+	
+	public ListNode addTwoNumbers(LinkedList l1, LinkedList l2){
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

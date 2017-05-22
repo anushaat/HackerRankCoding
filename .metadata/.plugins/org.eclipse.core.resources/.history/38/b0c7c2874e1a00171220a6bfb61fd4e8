@@ -1,0 +1,23 @@
+package linkedlist;
+
+import org.junit.Test;
+
+public class LinkedListTest {
+	
+	@Test
+	public void test(){
+		MyLinkedList list = new MyLinkedList();
+		list.add(15);
+		list.add(17);
+		list.add(10);
+		
+		System.out.println("Does 10 exist in list? " +list.find(10));
+		System.out.println("Does 10 exist in list? " +list.find(17));
+		System.out.println("Does 10 exist in list? " +list.find(15));
+		System.out.println("Does 10 exist in list? " +list.find(16));
+		System.out.println("Does 10 exist in list? " +list.find(1));
+		
+		System.out.println("Done!");
+	}
+
+}

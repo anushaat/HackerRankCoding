@@ -1,0 +1,63 @@
+package Trees;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+import javax.swing.tree.TreeNode;
+
+public class VerticalOrder {
+	
+	public static TreeMap<Integer, ArrayList<Node>> tm = new TreeMap<>();
+	public static ArrayList<Integer> al;
+	
+	
+	public static Node getVerticalOrder(Node node, Integer hd, TreeMap<Integer, ArrayList<Node>> map){
+		if(node == null){
+			return null;
+		}
+		
+		map.put(hd, new ArrayList(node.data));
+		
+		getVerticalOrder(node.left, hd-1, map);
+		
+		getVerticalOrder(node.right, hd+1, map);
+		
+		return node;
+	}
+	
+	public static void printVerticalOrder(Node node){
+		
+		int hd=0;
+		getVerticalOrder(node, hd, tm);
+		
+		for(Map.Entry<Integer, ArrayList<Node>> entry : tm.entrySet()){
+			int key = entry.getKey();
+			ArrayList<Node> value = entry.getValue();
+			for(Node root : value){
+				System.out.print(root.data+ " ");
+			}
+			System.out.println();
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Node root = new Node(1);
+	    root.left = new Node(2);
+	    root.right = new Node(3);
+	    root.left.left = new Node(4);
+	    root.left.right = new Node(5);
+	    root.right.left = new Node(6);
+	    root.right.right = new Node(7);
+	    root.right.left.right = new Node(8);
+	    root.right.right.right = new Node(9);
+	    System.out.println("Vertical order traversal is \n");
+	    printVerticalOrder(root);
+
+	}
+
+}

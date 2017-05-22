@@ -1,0 +1,73 @@
+package Trees;
+
+public class BinarySearchTree {
+	
+	private Node root;
+	
+/* Creates an empty binary tree*/
+	
+	public BinarySearchTree(){
+		root = null;
+	}
+	
+	public void insert(int data){
+		root =  insert(root, data);
+	}
+	
+	private Node insert(Node node, int data){
+		if(node == null){
+			node = new Node(data);
+		}
+		else{
+		
+			if(data < node.data){
+				node.left = insert(node.left, data);
+			}
+			else{
+				node.right = insert(node.right, data);
+			}
+		}
+		
+		return node;
+	}
+	
+	public boolean contains(int data){
+		return contains(root, data);
+	}
+	
+	private boolean contains(Node node, int data){
+		if(node == null){
+			return false;
+		}
+		
+		if(data == node.data){
+			return true;
+		}
+		else if(data < node.data){
+			return contains(node.left, data);
+		}
+		else{
+			return contains(node.right, data);
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		BinarySearchTree bst = new BinarySearchTree();
+		bst.insert(5);
+		bst.insert(4);
+		bst.insert(10);
+		bst.insert(11);
+		bst.insert(90);
+		bst.insert(2);
+		bst.insert(6);
+		
+		System.out.println(bst.contains(3));
+		System.out.println(bst.contains(90));
+		
+
+	}
+
+}

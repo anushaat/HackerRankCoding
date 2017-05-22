@@ -1,0 +1,55 @@
+package Trees;
+
+public class BinaryTree {
+	
+	private Node root;
+	
+	public void insert(int value){
+		root =  insert(root, value);
+	}
+	
+	private Node insert(Node node, int value){
+		if(node == null){
+			node = new Node(value);
+		}
+		else{
+		
+			if(value < node.data){
+				node.left = insert(node.left, value);
+			}
+			else{
+				node.right = insert(node.right, value);
+			}
+		}
+		
+		return node;
+	}
+	
+	public boolean contains(int data){
+		return contains(root, data);
+	}
+	
+	private boolean contains(Node node, int data){
+		if(node == null){
+			return false;
+		}
+		
+		if(data == node.data){
+			return true;
+		}
+		else if(data < node.data){
+			return contains(node.left, data);
+		}
+		else{
+			return contains(node.right, data);
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+
+	}
+
+}

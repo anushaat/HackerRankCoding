@@ -1,0 +1,22 @@
+package linkedlist;
+
+public class MyLinkedList {
+	
+	//head							tail
+	//
+	
+	Node head;
+	Node tail;
+	
+	public void add(Node node){
+		if(tail == null){
+			tail = node;
+			head = node;
+		}
+		else{
+			tail.next = node;
+			tail = node;
+		}
+	}
+
+}

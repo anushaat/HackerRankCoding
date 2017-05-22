@@ -1,0 +1,32 @@
+package Stacks;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class MaximumElement {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		Stack<Integer> st = new Stack<Integer>();
+		int max = Integer.MIN_VALUE;
+		
+		for(int i=0; i<n; i++){
+			int choice = scan.nextInt();
+			if(choice == 1){
+				int val = st.push(scan.nextInt());
+				max = Math.max(max, val);
+			}
+			
+			else if(choice == 2){
+				st.pop();
+			}
+			
+			else{
+				System.out.println(max);
+			}
+		}
+
+	}
+
+}
